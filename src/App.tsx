@@ -21,7 +21,7 @@ export default function App() {
     currentRank: 'A',
     status: 'landing',
     winner: null,
-    lastAction: '欢迎来到 森林疯狂8点！',
+    lastAction: '欢迎来到 AI Xiaoming疯狂8点！',
   });
 
   const [showInstructions, setShowInstructions] = useState(false);
@@ -104,7 +104,7 @@ export default function App() {
           currentSuit: bestSuit,
           currentRank: '8',
           status: 'player_turn',
-          lastAction: `森林之友打出了 8 并选择了 ${bestSuit}！`,
+          lastAction: `小明打出了 8 并选择了 ${bestSuit}！`,
         }));
       }
     } else {
@@ -115,7 +115,7 @@ export default function App() {
         currentSuit: card.suit,
         currentRank: card.rank,
         status: isPlayer ? 'ai_turn' : 'player_turn',
-        lastAction: `${isPlayer ? '你' : '森林之友'} 打出了 ${card.rank} (${card.suit})。`,
+        lastAction: `${isPlayer ? '你' : '小明'} 打出了 ${card.rank} (${card.suit})。`,
       }));
     }
   };
@@ -126,7 +126,7 @@ export default function App() {
       setGameState(prev => ({
         ...prev,
         status: isPlayer ? 'ai_turn' : 'player_turn',
-        lastAction: `${isPlayer ? '你' : '森林之友'} 必须跳过（牌堆已空）。`,
+        lastAction: `${isPlayer ? '你' : '小明'} 必须跳过（牌堆已空）。`,
       }));
       return;
     }
@@ -139,7 +139,7 @@ export default function App() {
       ...prev,
       deck: newDeck,
       [isPlayer ? 'playerHand' : 'aiHand']: newHand,
-      lastAction: `${isPlayer ? '你' : '森林之友'} 摸了一张牌。`,
+      lastAction: `${isPlayer ? '你' : '小明'} 摸了一张牌。`,
     }));
 
     // If player draws, it's still their turn if they can play it? 
@@ -175,7 +175,7 @@ export default function App() {
       currentSuit: suit,
       currentRank: '8',
       status: 'ai_turn',
-      lastAction: `你选择了 ${suit}。轮到森林之友了。`,
+      lastAction: `你选择了 ${suit}。轮到小明了。`,
     }));
   };
 
@@ -187,7 +187,7 @@ export default function App() {
           <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
             <span className="text-white font-bold text-xl italic">8</span>
           </div>
-          <h1 className="font-serif italic text-2xl font-bold tracking-tight">森林疯狂8点</h1>
+          <h1 className="font-serif italic text-2xl font-bold tracking-tight">AI Xiaoming疯狂8点</h1>
         </div>
         
         {gameState.status !== 'landing' && (
@@ -271,9 +271,9 @@ export default function App() {
             <div className="flex justify-between items-start w-full mb-4">
               <div className="flex flex-col items-center bg-white/5 p-4 rounded-2xl border border-white/10 w-24 sm:w-32">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-500/20 rounded-full flex items-center justify-center border-2 border-emerald-500/50 mb-2 overflow-hidden">
-                  <img src="https://loremflickr.com/100/100/bird,face/all" alt="森林之友" className="w-full h-full object-cover" />
+                  <img src="https://loremflickr.com/100/100/bird,face/all" alt="小明" className="w-full h-full object-cover" />
                 </div>
-                <div className="text-zinc-400 text-xs font-bold uppercase tracking-widest">森林之友</div>
+                <div className="text-zinc-400 text-xs font-bold uppercase tracking-widest">小明</div>
                 <div className="text-white text-lg sm:text-xl font-bold">{gameState.aiHand.length} 张牌</div>
               </div>
 
@@ -367,8 +367,8 @@ export default function App() {
               </h2>
               <p className="text-zinc-400 mb-8">
                 {gameState.winner === 'player' 
-                  ? "你打败了森林之友！太棒了。" 
-                  : "森林之友赢了。再来一局？"}
+                  ? "你打败了小明！太棒了。" 
+                  : "小明赢了。再来一局？"}
               </p>
               <button 
                 onClick={initGame}
