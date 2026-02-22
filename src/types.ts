@@ -8,7 +8,7 @@ export interface CardData {
   rank: Rank;
 }
 
-export type GameStatus = 'dealing' | 'player_turn' | 'ai_turn' | 'suit_picking' | 'game_over';
+export type GameStatus = 'landing' | 'dealing' | 'player_turn' | 'ai_turn' | 'suit_picking' | 'game_over';
 
 export interface GameState {
   deck: CardData[];

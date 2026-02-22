@@ -40,3 +40,22 @@ export const shuffle = <T,>(array: T[]): T[] => {
   }
   return newArray;
 };
+
+export const BIRD_SPECIES: Record<Rank, { zh: string; en: string }> = {
+  'A': { zh: '老鹰', en: 'Eagle' },
+  '2': { zh: '麻雀', en: 'Sparrow' },
+  '3': { zh: '知更鸟', en: 'Robin' },
+  '4': { zh: '猫头鹰', en: 'Owl' },
+  '5': { zh: '鹦鹉', en: 'Parrot' },
+  '6': { zh: '企鹅', en: 'Penguin' },
+  '7': { zh: '天鹅', en: 'Swan' },
+  '8': { zh: '翠鸟', en: 'Kingfisher' },
+  '9': { zh: '啄木鸟', en: 'Woodpecker' },
+  '10': { zh: '火烈鸟', en: 'Flamingo' },
+  'J': { zh: '孔雀', en: 'Peacock' },
+  'Q': { zh: '蜂鸟', en: 'Hummingbird' },
+  'K': { zh: '猎鹰', en: 'Falcon' },
+};
+
+export const PLAY_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3';
+export const DRAW_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2007/2007-preview.mp3';

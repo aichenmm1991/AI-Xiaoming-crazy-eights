@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply bg-[#064e3b] text-white antialiased;
+  @apply bg-[#0F0F1A] text-white antialiased;
 }
 
 .card-shadow {
