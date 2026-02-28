@@ -8,16 +8,18 @@ export interface CardData {
   rank: Rank;
 }
 
-export type GameStatus = 'landing' | 'dealing' | 'player_turn' | 'ai_turn' | 'suit_picking' | 'game_over';
+export type PlayerID = 'player' | 'ai1' | 'ai2' | 'ai3';
+
+export type GameStatus = 'landing' | 'playing' | 'suit_picking' | 'game_over';
 
 export interface GameState {
   deck: CardData[];
-  playerHand: CardData[];
-  aiHand: CardData[];
+  hands: Record<PlayerID, CardData[]>;
   discardPile: CardData[];
   currentSuit: Suit;
   currentRank: Rank;
   status: GameStatus;
-  winner: 'player' | 'ai' | null;
+  turn: PlayerID;
+  winner: PlayerID | null;
   lastAction: string;
 }

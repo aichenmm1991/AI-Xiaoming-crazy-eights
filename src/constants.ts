@@ -57,5 +57,15 @@ export const BIRD_SPECIES: Record<Rank, { zh: string; en: string }> = {
   'K': { zh: '猎鹰', en: 'Falcon' },
 };
 
+export const PLAYER_NAMES: Record<string, string> = {
+  player: '你',
+  ai1: '森林之友 A',
+  ai2: '森林之友 B',
+  ai3: '森林之友 C',
+};
+
 export const PLAY_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3';
 export const DRAW_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2007/2007-preview.mp3';
+export const BGM_URL = 'https://assets.mixkit.co/active_storage/sfx/123/123-preview.mp3'; // Placeholder, will find a better one if possible
+// Better BGM: something calm. Mixkit has some free ones.
+export const CALM_BGM_URL = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3'; 
